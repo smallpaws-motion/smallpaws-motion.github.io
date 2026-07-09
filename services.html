@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>บริการ — SmallPaws Motion</title>
+  <meta name="description" content="รับทำ Motion Graphic ครบวงจร Explainer Video, Typography, Character Animation, UX/UI Presentation">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/services.css?v=12">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="nav scrolled">
+  <a href="index.html" class="nav-logo" style="color:var(--gray-800);text-shadow:none">
+    <span class="paw">🐾</span> SmallPaws Motion
+  </a>
+  <div class="nav-links" style="--link-color:var(--gray-600)">
+    <a href="index.html#works"   style="color:var(--gray-600);text-shadow:none" data-th="ผลงาน"    data-en="Works">ผลงาน</a>
+    <a href="services.html"      style="color:var(--purple);text-shadow:none;font-weight:900" data-th="บริการ"    data-en="Services">บริการ</a>
+    <a href="index.html#about"   style="color:var(--gray-600);text-shadow:none" data-th="เกี่ยวกับ" data-en="About">เกี่ยวกับ</a>
+    <a href="index.html#contact" style="color:var(--gray-600);text-shadow:none" data-th="ติดต่อ"    data-en="Contact">ติดต่อ</a>
+  </div>
+  <div class="nav-right">
+    <button class="lang-toggle scrolled-toggle" id="lang-toggle" aria-label="Switch language">
+      <span class="lang-th active">TH</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-en">EN</span>
+    </button>
+    <a href="index.html#contact" class="nav-cta" data-th="ติดต่อเรา ✨" data-en="Contact ✨">ติดต่อเรา ✨</a>
+  </div>
+</nav>
+
+<!-- ── Page Hero ───────────────────────────────────────────── -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="svc-hero-inner fade-up">
+
+      <!--
+        ICON PLACEHOLDER — สลับเป็น Lottie ได้ตามด้านล่าง
+        ───────────────────────────────────────────────────────
+        วิธีใช้ Lottie:
+          1. โหลด script: <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          2. แทน .svc-hero-lottie ด้วย:
+             <lottie-player src="assets/lotties/hero.json" background="transparent"
+               speed="1" style="width:420px;height:420px" autoplay loop></lottie-player>
+
+        วิธีใช้ PNG:
+          แทน .icon-placeholder ด้วย: <img src="assets/images/hero-illus.png" alt="" style="width:420px">
+        ───────────────────────────────────────────────────────
+      -->
+      <div class="svc-hero-visual" id="hero-visual-wrap">
+        <div class="svc-hero-blob"></div>
+        <img src="assets/image/service_hero.png" alt="SmallPaws Motion" class="svc-hero-img" id="svc-hero-img">
+      </div>
+
+      <div class="svc-hero-text">
+        <div class="section-label" data-th="✦ รับทำงาน Motion Graphic" data-en="✦ Motion Graphic Services">✦ รับทำงาน Motion Graphic</div>
+        <h1 class="svc-hero-title">
+          <span data-th="งานที่ดี เริ่มจาก" data-en="Great Work">งานที่ดี เริ่มจาก</span><br>
+          <span class="hero-gradient" data-th="ความเข้าใจที่แท้จริง" data-en="Starts Here">ความเข้าใจที่แท้จริง</span>
+        </h1>
+        <p class="svc-hero-desc" data-th="เราไม่ได้แค่ทำ animation — เราเข้าใจ brief ของคุณ และเปลี่ยนมันให้เป็นงานที่ทั้งสวยและสื่อสารได้จริง" data-en="We don't just animate — we understand your brief and turn it into work that's both beautiful and truly communicates.">
+          เราไม่ได้แค่ทำ animation — เราเข้าใจ brief ของคุณ และเปลี่ยนมันให้เป็นงานที่ทั้งสวยและสื่อสารได้จริง
+        </p>
+        <div class="svc-hero-stats">
+          <div class="stat-pill">
+            <span class="stat-num">8+</span>
+            <span class="stat-label" data-th="ปีประสบการณ์" data-en="Years Exp.">ปีประสบการณ์</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num">100+</span>
+            <span class="stat-label" data-th="โปรเจกต์" data-en="Projects">โปรเจกต์</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num">∞</span>
+            <span class="stat-label" data-th="Revise ได้เลย" data-en="Free Revisions">Revise ได้เลย</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
+          <a href="index.html#contact" class="btn-primary" data-th="ปรึกษาฟรี →" data-en="Free Consultation →">ปรึกษาฟรี →</a>
+          <a href="index.html#works"   class="btn-outline" data-th="ดูผลงาน" data-en="See Works">ดูผลงาน</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Services Grid ───────────────────────────────────────── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:56px">
+      <div class="section-label" style="display:inline-flex" data-th="🎨 สิ่งที่เราทำ" data-en="🎨 What We Do">🎨 สิ่งที่เราทำ</div>
+      <h2 class="section-title">
+        <span data-th="บริการของเรา" data-en="Our Services">บริการของเรา</span><span style="color:var(--pink)">.</span>
+      </h2>
+      <p style="color:var(--gray-400);font-weight:600;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto" data-th="ทุกบริการออกแบบมาเพื่อให้งานของคุณดูดีและสื่อสารตรงกลุ่มเป้าหมาย" data-en="Every service is designed to make your work look great and communicate directly to your audience.">
+        ทุกบริการออกแบบมาเพื่อให้งานของคุณดูดีและสื่อสารตรงกลุ่มเป้าหมาย
+      </p>
+    </div>
+
+    <div class="svc-grid">
+
+      <!-- ── Explainer Video ── -->
+      <div class="svc-card fade-up">
+        <div class="svc-card-overlay"></div>
+        <div class="svc-card-icon-wrap">
+          <img src="assets/image/Explainer Video_icon.png" alt="Explainer Video" class="svc-icon-img">
+        </div>
+        <div class="svc-card-body">
+          <h3 class="svc-card-title" data-th="Explainer Video" data-en="Explainer Video">Explainer Video</h3>
+          <ul class="svc-list">
+            <li data-th="Script + Storyboard" data-en="Script + Storyboard">Script + Storyboard</li>
+            <li data-th="2D / Flat Motion" data-en="2D / Flat Motion">2D / Flat Motion</li>
+            <li data-th="Voice-over ประกอบ" data-en="With Voice-over">Voice-over ประกอบ</li>
+            <li data-th="Sound Design" data-en="Sound Design">Sound Design</li>
+          </ul>
+          <div class="svc-duration" data-th="⏱ 7–14 วัน" data-en="⏱ 7–14 days">⏱ 7–14 วัน</div>
+        </div>
+        <a href="index.html#contact" class="btn-flip-cta" data-th="สอบถามราคา →" data-en="Get a Quote →">สอบถามราคา →</a>
+      </div>
+
+      <!-- ── Typography Animation ── -->
+      <div class="svc-card fade-up">
+        <div class="svc-card-overlay"></div>
+        <div class="svc-card-icon-wrap">
+          <img src="assets/image/Typography Animation_icon.png" alt="Typography Animation" class="svc-icon-img">
+        </div>
+        <div class="svc-card-body">
+          <h3 class="svc-card-title" data-th="Typography Animation" data-en="Typography Animation">Typography Animation</h3>
+          <ul class="svc-list">
+            <li data-th="Kinetic / Lyric Video" data-en="Kinetic / Lyric Video">Kinetic / Lyric Video</li>
+            <li data-th="Quote &amp; Slide Content" data-en="Quote &amp; Slide Content">Quote &amp; Slide Content</li>
+            <li data-th="Lower Third / Subtitle" data-en="Lower Third / Subtitle">Lower Third / Subtitle</li>
+            <li data-th="Opening Title Sequence" data-en="Opening Title Sequence">Opening Title Sequence</li>
+          </ul>
+          <div class="svc-duration" data-th="⏱ 5–10 วัน" data-en="⏱ 5–10 days">⏱ 5–10 วัน</div>
+        </div>
+        <a href="index.html#contact" class="btn-flip-cta" data-th="สอบถามราคา →" data-en="Get a Quote →">สอบถามราคา →</a>
+      </div>
+
+      <!-- ── Character Animation ── -->
+      <div class="svc-card fade-up">
+        <div class="svc-card-overlay"></div>
+        <div class="svc-card-icon-wrap">
+          <img src="assets/image/Character Animation_icon.png" alt="Character Animation" class="svc-icon-img">
+        </div>
+        <div class="svc-card-body">
+          <h3 class="svc-card-title" data-th="Character Animation" data-en="Character Animation">Character Animation</h3>
+          <ul class="svc-list">
+            <li data-th="Brand Mascot Design" data-en="Brand Mascot Design">Brand Mascot Design</li>
+            <li data-th="Character Rigging" data-en="Character Rigging">Character Rigging</li>
+            <li data-th="Sticker / Emoji Pack" data-en="Sticker / Emoji Pack">Sticker / Emoji Pack</li>
+            <li data-th="Social Media Character" data-en="Social Media Character">Social Media Character</li>
+          </ul>
+          <div class="svc-duration" data-th="⏱ 10–21 วัน" data-en="⏱ 10–21 days">⏱ 10–21 วัน</div>
+        </div>
+        <a href="index.html#contact" class="btn-flip-cta" data-th="สอบถามราคา →" data-en="Get a Quote →">สอบถามราคา →</a>
+      </div>
+
+      <!-- ── UX/UI Presentation ── -->
+      <div class="svc-card fade-up">
+        <div class="svc-card-overlay"></div>
+        <div class="svc-card-icon-wrap">
+          <img src="assets/image/UXUI Presentation_icon.png" alt="UX/UI Presentation" class="svc-icon-img">
+        </div>
+        <div class="svc-card-body">
+          <h3 class="svc-card-title" data-th="UX/UI Presentation" data-en="UX/UI Presentation">UX/UI Presentation</h3>
+          <ul class="svc-list">
+            <li data-th="App Demo Video" data-en="App Demo Video">App Demo Video</li>
+            <li data-th="Investor Pitch Deck Anim" data-en="Pitch Deck Animation">Investor Pitch Deck Anim</li>
+            <li data-th="UI Transition &amp; Micro Anim" data-en="UI Transition &amp; Micro Anim">UI Transition &amp; Micro Anim</li>
+            <li data-th="Product Walkthrough" data-en="Product Walkthrough">Product Walkthrough</li>
+          </ul>
+          <div class="svc-duration" data-th="⏱ 7–14 วัน" data-en="⏱ 7–14 days">⏱ 7–14 วัน</div>
+        </div>
+        <a href="index.html#contact" class="btn-flip-cta" data-th="สอบถามราคา →" data-en="Get a Quote →">สอบถามราคา →</a>
+      </div>
+
+      <!-- ── AI Motion & Concept Art ── -->
+      <div class="svc-card fade-up">
+        <div class="svc-card-overlay"></div>
+        <div class="svc-card-icon-wrap">
+          <img src="assets/image/AI Motion_icon.png" alt="AI Motion & Concept Art" class="svc-icon-img">
+        </div>
+        <div class="svc-card-body">
+          <h3 class="svc-card-title" data-th="AI Motion & Concept Art" data-en="AI Motion & Concept Art">AI Motion & Concept Art</h3>
+          <ul class="svc-list">
+            <li data-th="AI Concept Art Pack" data-en="AI Concept Art Pack">AI Concept Art Pack</li>
+            <li data-th="AI Short Clip" data-en="AI Short Clip">AI Short Clip</li>
+            <li data-th="AI Background / Scene" data-en="AI Background / Scene">AI Background / Scene</li>
+            <li data-th="ออกแบบ Storyboard พร้อม mood &amp; tone" data-en="Storyboard with mood &amp; tone">ออกแบบ Storyboard พร้อม mood &amp; tone</li>
+          </ul>
+          <div class="svc-duration" data-th="⏱ 3–5 วัน · ต้องส่ง reference ก่อน" data-en="⏱ 3–5 days · reference required">⏱ 3–5 วัน · ต้องส่ง reference ก่อน</div>
+        </div>
+        <a href="index.html#contact" class="btn-flip-cta" data-th="สอบถามราคา →" data-en="Get a Quote →">สอบถามราคา →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── How We Work ─────────────────────────────────────────── -->
+<section class="section svc-process-section">
+  <div class="container">
+
+    <!-- Heading — แยกออกมาอยู่เหนือ grid เพื่อ center ได้อิสระ -->
+    <div class="fade-up" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label" style="display:inline-flex" data-th="⚙️ วิธีทำงานของเรา" data-en="⚙️ How We Work">⚙️ วิธีทำงานของเรา</div>
+      <h2 class="section-title" style="text-align:center">
+        <span data-th="ขั้นตอนง่าย ๆ" data-en="Simple Process">ขั้นตอนง่าย ๆ</span>
+      </h2>
+    </div>
+
+    <div class="svc-process-grid">
+
+      <!-- Process Visual -->
+      <div class="fade-up svc-process-visual">
+        <div class="process-visual-wrap" id="process-visual-wrap">
+          <div class="process-blob-bg"></div>
+          <img src="assets/image/process.png" alt="Process" class="process-img" id="process-img">
+        </div>
+      </div>
+
+      <!-- Process Steps -->
+      <div class="fade-up" style="flex:1;min-width:280px;max-width:440px;">
+
+        <div class="process-steps">
+
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3 class="step-title" data-th="รับ Brief &amp; คุยรายละเอียด" data-en="Brief &amp; Discovery">รับ Brief &amp; คุยรายละเอียด</h3>
+              <p class="step-desc" data-th="เราคุยเพื่อเข้าใจเป้าหมาย กลุ่มเป้าหมาย สไตล์ที่ชอบ และ timeline ก่อนเริ่มงาน" data-en="We talk to understand your goals, target audience, preferred style, and timeline before we begin.">
+                เราคุยเพื่อเข้าใจเป้าหมาย กลุ่มเป้าหมาย สไตล์ที่ชอบ และ timeline ก่อนเริ่มงาน
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3 class="step-title" data-th="Concept &amp; Storyboard" data-en="Concept &amp; Storyboard">Concept &amp; Storyboard</h3>
+              <p class="step-desc" data-th="ร่าง concept และ storyboard ส่งให้ approve ก่อนลงมือทำจริง เพื่อให้ทุกอย่างตรงใจ" data-en="Draft concept and storyboard for your approval before we start production, so everything aligns.">
+                ร่าง concept และ storyboard ส่งให้ approve ก่อนลงมือทำจริง เพื่อให้ทุกอย่างตรงใจ
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3 class="step-title" data-th="Production" data-en="Production">Production</h3>
+              <p class="step-desc" data-th="ลงมือทำจริง อัปเดตความคืบหน้าให้รับรู้อย่างต่อเนื่อง ไม่เงียบหาย" data-en="We produce the work and keep you updated throughout — no radio silence, ever.">
+                ลงมือทำจริง อัปเดตความคืบหน้าให้รับรู้อย่างต่อเนื่อง ไม่เงียบหาย
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3 class="step-title" data-th="Revise จนพอใจ &amp; Deliver" data-en="Revise &amp; Deliver">Revise จนพอใจ &amp; Deliver</h3>
+              <p class="step-desc" data-th="ปรับแก้ได้จนกว่าจะพอใจ แล้วส่งไฟล์คุณภาพสูงพร้อมใช้งานทุก platform" data-en="Revise until you're happy, then deliver high-quality files ready for every platform.">
+                ปรับแก้ได้จนกว่าจะพอใจ แล้วส่งไฟล์คุณภาพสูงพร้อมใช้งานทุก platform
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Why SmallPaws ────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:56px">
+      <div class="section-label" style="display:inline-flex" data-th="💜 ทำไมต้องเรา" data-en="💜 Why Us">💜 ทำไมต้องเรา</div>
+      <h2 class="section-title">
+        <span data-th="สิ่งที่ทำให้เราต่างออกไป" data-en="What Sets Us Apart">สิ่งที่ทำให้เราต่างออกไป</span>
+      </h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <img src="assets/image/brieft.png" alt="เข้าใจ Brief จริง" class="why-icon-img">
+        </div>
+        <h3 class="why-title" data-th="เข้าใจ Brief จริง" data-en="We Actually Understand Briefs">เข้าใจ Brief จริง</h3>
+        <p class="why-desc" data-th="เราอ่านทุกบรรทัด ถามถูกคำถาม และทำงานจาก insight ไม่ใช่แค่ตามคำสั่ง" data-en="We read every line, ask the right questions, and work from insight — not just following instructions.">
+          เราอ่านทุกบรรทัด ถามถูกคำถาม และทำงานจาก insight ไม่ใช่แค่ตามคำสั่ง
+        </p>
+      </div>
+
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <img src="assets/image/On Time.png" alt="ส่งงานตรงเวลาเสมอ" class="why-icon-img">
+        </div>
+        <h3 class="why-title" data-th="ส่งงานตรงเวลาเสมอ" data-en="Always On Time">ส่งงานตรงเวลาเสมอ</h3>
+        <p class="why-desc" data-th="deadline คือสิ่งศักดิ์สิทธิ์สำหรับเรา ถ้ามีอะไรผิดพลาด เราแจ้งก่อนเสมอ" data-en="Deadlines are sacred to us. If anything changes, we always communicate ahead of time.">
+          deadline คือสิ่งศักดิ์สิทธิ์สำหรับเรา ถ้ามีอะไรผิดพลาด เราแจ้งก่อนเสมอ
+        </p>
+      </div>
+
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <img src="assets/image/revise.png" alt="Revise ได้ตามข้อตกลง" class="why-icon-img">
+        </div>
+        <h3 class="why-title" data-th="Revise ได้ตามข้อตกลง" data-en="Revisions Included">Revise ได้ตามข้อตกลง</h3>
+        <p class="why-desc" data-th="ทุกโปรเจกต์สามารถแก้ไขได้ตามจำนวนครั้งที่ตกลงกันไว้ตั้งแต่แรก ปรับงานได้อย่างมั่นใจ ไม่มีค่าใช้จ่ายเพิ่ม" data-en="Every project includes a clear number of revision rounds agreed upfront — refine your work with confidence, no extra charge.">
+          ทุกโปรเจกต์มีรอบ revise ที่ตกลงกันไว้ตั้งแต่แรก ปรับงานได้อย่างมั่นใจ ไม่มีค่าใช้จ่ายเพิ่ม
+        </p>
+      </div>
+
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <img src="assets/image/Easy to Work With.png" alt="คุยง่าย ไม่หายไปไหน" class="why-icon-img">
+        </div>
+        <h3 class="why-title" data-th="คุยง่าย ไม่หายไปไหน" data-en="Easy to Work With">คุยง่าย ไม่หายไปไหน</h3>
+        <p class="why-desc" data-th="ตอบไว อัปเดตตลอด และทำให้การทำงานด้วยกันเป็นเรื่องสนุกมากที่สุดเท่าที่จะทำได้" data-en="Fast replies, constant updates, and making collaboration as enjoyable as possible.">
+          ตอบไว อัปเดตตลอด และทำให้การทำงานด้วยกันเป็นเรื่องสนุกมากที่สุดเท่าที่จะทำได้
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ──────────────────────────────────────────── -->
+<section class="svc-cta-banner">
+  <div class="svc-cta-inner fade-up">
+
+    <!--
+      ICON PLACEHOLDER ซ้าย:
+      PNG:    <img src="assets/images/cta-left.png" alt="" style="width:160px">
+      Lottie: <lottie-player src="assets/lotties/cta-left.json"
+                style="width:160px;height:160px" autoplay loop></lottie-player>
+      data-slot="cta-left"
+    -->
+    <div class="cta-side-icon">
+      <img src="assets/image/light_bulb.png" alt="" style="width:160px;height:160px;object-fit:contain;">
+    </div>
+
+    <!-- ข้อความกลาง -->
+    <div class="svc-cta-text">
+      <h2 class="svc-cta-title">
+        <span data-th="พร้อมเริ่มโปรเจกต์แล้วใช่มั้ย?" data-en="Ready to Start a Project?">พร้อมเริ่มโปรเจกต์แล้วใช่มั้ย?</span>
+      </h2>
+      <p class="svc-cta-sub" data-th="ทักมาเล่าให้ฟัง เราพร้อมรับฟังและ quote ราคาให้ฟรีเสมอ" data-en="Tell us about it — we're always ready to listen and quote for free.">
+        ทักมาเล่าให้ฟัง เราพร้อมรับฟังและ quote ราคาให้ฟรีเสมอ
+      </p>
+      <a href="index.html#contact" class="btn-cta-big" data-th="ติดต่อเราเลย →" data-en="Contact Us →">ติดต่อเราเลย →</a>
+    </div>
+
+    <!--
+      ICON PLACEHOLDER ขวา:
+      PNG:    <img src="assets/images/cta-right.png" alt="" style="width:160px">
+      Lottie: <lottie-player src="assets/lotties/cta-right.json"
+                style="width:160px;height:160px" autoplay loop></lottie-player>
+      data-slot="cta-right"
+    -->
+    <div class="cta-side-icon">
+      <img src="assets/image/design_pen.png" alt="" style="width:160px;height:160px;object-fit:contain;">
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────────────── -->
+<section class="section svc-faq-section">
+  <div class="container">
+    <div class="svc-faq-inner">
+
+      <div class="fade-up" style="flex:1;min-width:280px">
+        <div class="section-label" data-th="❓ คำถามที่พบบ่อย" data-en="❓ FAQ">❓ คำถามที่พบบ่อย</div>
+        <h2 class="section-title" style="margin-bottom:16px">
+          <span data-th="มีข้อสงสัยมั้ย?" data-en="Got Questions?">มีข้อสงสัยมั้ย?</span>
+        </h2>
+        <p style="color:var(--gray-400);font-weight:600;margin-bottom:32px" data-th="ถ้าไม่เจอคำตอบที่นี่ ทักมาถามได้เลย!" data-en="If you don't find your answer here, just reach out!">
+          ถ้าไม่เจอคำตอบที่นี่ ทักมาถามได้เลย!
+        </p>
+        <a href="index.html#contact" class="btn-primary" data-th="ถามเพิ่มเติม →" data-en="Ask Us →">ถามเพิ่มเติม →</a>
+      </div>
+
+      <div class="faq-list fade-up" style="flex:1.4;min-width:280px">
+
+        <details class="faq-item">
+          <summary class="faq-q" data-th="ราคาเริ่มต้นเท่าไหร่?" data-en="What's the starting price?">ราคาเริ่มต้นเท่าไหร่?</summary>
+          <div class="faq-a" data-th="ราคาขึ้นอยู่กับความซับซ้อนและระยะเวลา ทักมาเล่า brief ให้ฟัง แล้วเราจะ quote ราคาให้ฟรีและไม่มีพันธะ" data-en="Pricing depends on complexity and timeline. Share your brief with us and we'll quote for free — no strings attached.">
+            ราคาขึ้นอยู่กับความซับซ้อนและระยะเวลา ทักมาเล่า brief ให้ฟัง แล้วเราจะ quote ราคาให้ฟรีและไม่มีพันธะ
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q" data-th="ใช้เวลานานแค่ไหน?" data-en="How long does a project take?">ใช้เวลานานแค่ไหน?</summary>
+          <div class="faq-a" data-th="ส่วนใหญ่อยู่ที่ 7–21 วัน ขึ้นอยู่กับประเภทงาน ถ้ามี deadline เร่งด่วน แจ้งมาได้เลย จะพยายามจัดให้" data-en="Typically 7–21 days depending on the type of work. If you have a tight deadline, let us know — we'll do our best to accommodate.">
+            ส่วนใหญ่อยู่ที่ 7–21 วัน ขึ้นอยู่กับประเภทงาน ถ้ามี deadline เร่งด่วน แจ้งมาได้เลย จะพยายามจัดให้
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q" data-th="ถ้าผลลัพธ์ไม่ตรงใจทำอย่างไร?" data-en="What if the result isn't what I imagined?">ถ้าผลลัพธ์ไม่ตรงใจทำอย่างไร?</summary>
+          <div class="faq-a" data-th="บอกเราได้เลย เรา revise ให้จนกว่าจะพอใจ การ revise ไม่มีค่าใช้จ่ายเพิ่ม เป็นส่วนหนึ่งของทุกโปรเจกต์" data-en="Just tell us. We revise until you're happy — revisions are included in every project at no extra cost.">
+            บอกเราได้เลย เรา revise ให้จนกว่าจะพอใจ การ revise ไม่มีค่าใช้จ่ายเพิ่ม เป็นส่วนหนึ่งของทุกโปรเจกต์
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q" data-th="ต้องเตรียมอะไรบ้างก่อนส่ง brief?" data-en="What do I need to prepare before submitting a brief?">ต้องเตรียมอะไรบ้างก่อนส่ง brief?</summary>
+          <div class="faq-a" data-th="ยิ่งมีรายละเอียดยิ่งดี แต่ถ้ายังไม่ชัด ทักมาคุยก่อนได้เลย เราช่วย brief ให้ได้" data-en="The more detail the better, but if things aren't clear yet, just reach out — we can help shape the brief together.">
+            ยิ่งมีรายละเอียดยิ่งดี แต่ถ้ายังไม่ชัด ทักมาคุยก่อนได้เลย เราช่วย brief ให้ได้
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q" data-th="รองรับงานไหนบ้าง?" data-en="What types of projects do you take?">รองรับงานไหนบ้าง?</summary>
+          <div class="faq-a" data-th="แบรนด์ สตาร์ทอัพ เอเจนซี่ ครีเอเตอร์ และองค์กร ทั้งโปรเจกต์เล็กและใหญ่ รับหมด" data-en="Brands, startups, agencies, creators, and organizations. Both small and large projects welcome.">
+            แบรนด์ สตาร์ทอัพ เอเจนซี่ ครีเอเตอร์ และองค์กร ทั้งโปรเจกต์เล็กและใหญ่ รับหมด
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 <span>SmallPaws Motion</span> — Made with 🐾 & lots of caffeine</p>
+</footer>
+
+<script src="js/services.js?v=4"></script>
+</body>
+</html>

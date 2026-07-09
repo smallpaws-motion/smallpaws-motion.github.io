@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmallPaws Motion — Motion Graphic Portfolio</title>
+  <meta name="description" content="Motion graphic portfolio by SmallPaws — Explainer Video, Typography, UX/UI Presentation, Character Animation">
+  <meta property="og:title" content="SmallPaws Motion">
+  <meta property="og:description" content="Motion graphic portfolio — 8 years of bringing stories to life through motion">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="#hero" class="nav-logo">
+    <span class="paw">🐾</span> SmallPaws Motion
+  </a>
+  <div class="nav-links">
+    <a href="#works"        data-th="ผลงาน"    data-en="Works">ผลงาน</a>
+    <a href="services.html" data-th="บริการ"    data-en="Services">บริการ</a>
+    <a href="#about"        data-th="เกี่ยวกับ" data-en="About">เกี่ยวกับ</a>
+    <a href="#contact"      data-th="ติดต่อ"    data-en="Contact">ติดต่อ</a>
+  </div>
+  <div class="nav-right">
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+      <span class="lang-th active">TH</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-en">EN</span>
+    </button>
+    <a href="#contact" class="nav-cta" data-th="ติดต่อเรา ✨" data-en="Contact ✨">ติดต่อเรา ✨</a>
+  </div>
+</nav>
+
+<!-- ── Hero (fullscreen single looping file) ───────────────── -->
+<!--
+  วิธีเปลี่ยน background:
+  1. วางไฟล์ใน assets/  เช่น assets/hero.mp4  หรือ assets/hero.gif
+  2. แก้ src ใน <video> หรือ <img> ด้านล่างนี้
+  ─────────────────────────────────────────────────────────────
+  ใช้ <video> สำหรับ .mp4 / .webm  (แนะนำ — ไฟล์เล็กกว่า GIF มาก)
+  ใช้ <img>   สำหรับ .gif / .apng  (ถ้ามีไฟล์พร้อมใช้แล้ว)
+-->
+<section id="hero">
+  <div class="hero-bg">
+
+    <!-- ══ ใส่ไฟล์ video ที่นี่ ══════════════════════════════
+    <video class="hero-media" autoplay muted loop playsinline>
+      <source src="assets/hero.webm" type="video/webm">
+      <source src="assets/hero.mp4"  type="video/mp4">
+    </video>
+    ══════════════════════════════════════════════════════════
+
+    ══ หรือ GIF/APNG ที่นี่ ══════════════════════════════════
+    <img class="hero-media" src="assets/hero.gif" alt="">
+    ══════════════════════════════════════════════════════════ -->
+
+    <video class="hero-media" autoplay muted loop playsinline>
+      <source src="assets/header-frames/Header_vdo.webm" type="video/webm">
+    </video>
+
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge" data-th="✦ Motion Graphic Portfolio" data-en="✦ Motion Graphic Portfolio">✦ Motion Graphic Portfolio</div>
+    <h1 class="hero-title">
+      Stories You <span class="highlight">Can See</span>
+    </h1>
+    <p class="hero-desc" data-th="Explainer Video · Typography · Character Animation · UX/UI Presentation" data-en="Explainer Video · Typography · Character Animation · UX/UI Presentation">
+      Explainer Video · Typography · Character Animation · UX/UI Presentation
+    </p>
+    <div class="hero-actions">
+      <a href="#works" class="btn-primary" data-th="ดูผลงานทั้งหมด →" data-en="View All Works →">ดูผลงานทั้งหมด →</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span data-th="เลื่อนลง" data-en="Scroll">เลื่อนลง</span>
+  </div>
+</section>
+
+<!-- ── Works ──────────────────────────────────────────────── -->
+<section id="works" class="section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label" data-th="🎬 ผลงาน" data-en="🎬 Selected Works">🎬 ผลงาน</div>
+      <h2 class="section-title" style="margin-bottom:32px">
+        <span data-th="งานที่ผ่านมา" data-en="Our Work">งานที่ผ่านมา</span><span style="color:var(--pink)">.</span>
+      </h2>
+    </div>
+
+    <div class="fade-up" id="filter-bar"></div>
+
+    <div id="works-grid" class="works-grid" style="margin-top:32px"></div>
+  </div>
+</section>
+
+<!-- ── Testimonials ───────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="section-header fade-up">
+    <div class="container">
+      <div class="section-label" data-th="💬 รีวิวจากลูกค้า" data-en="💬 Kind Words">💬 รีวิวจากลูกค้า</div>
+      <h2 class="section-title">
+        <span data-th="เสียงจากลูกค้า" data-en="What Clients Say">เสียงจากลูกค้า</span><span style="color:var(--pink)">~</span>
+      </h2>
+    </div>
+  </div>
+
+  <div style="height:40px"></div>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+</section>
+
+<!-- ── About ──────────────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual fade-up">
+        <div class="about-blob-bg"></div>
+        <img src="assets/image/aboutMe.png" alt="SmallPaws Motion" class="about-photo">
+      </div>
+
+      <div class="about-content fade-up">
+        <div class="section-label" data-th="🐾 เกี่ยวกับเรา" data-en="🐾 About Us">🐾 เกี่ยวกับเรา</div>
+        <h2 class="section-title" style="margin-bottom:20px">
+          <span data-th="สวัสดี เราคือ" data-en="Hey, We're">สวัสดี เราคือ</span><br><span style="color:var(--pink)">SmallPaws</span> 👋
+        </h2>
+        <p class="about-intro" data-th="เราเป็น Motion Graphic Designer ที่หลงรักการเล่าเรื่องผ่านภาพเคลื่อนไหวมาตลอด 8 ปี งานของเราเดินทางผ่านแบรนด์ สตาร์ทอัพ และครีเอเตอร์มากมาย และทุกชิ้นล้วนเริ่มจากความตั้งใจเล่าเรื่องให้ดีที่สุด" data-en="We're a Motion Graphic Designer with 8 years of passion for storytelling through movement. Our work has traveled through brands, startups, and creators — and every piece starts with one intention: tell the story well.">
+          เราเป็น Motion Graphic Designer ที่หลงรักการเล่าเรื่องผ่านภาพเคลื่อนไหวมาตลอด 8 ปี
+          งานของเราเดินทางผ่านแบรนด์ สตาร์ทอัพ และครีเอเตอร์มากมาย
+          และทุกชิ้นล้วนเริ่มจากความตั้งใจเล่าเรื่องให้ดีที่สุด
+        </p>
+        <p class="about-intro" data-th="เราเชื่อว่างานดีเกิดจากความเข้าใจที่ลึกซึ้ง เพราะนั้นเราจึงใส่ใจทุก brief ไม่ว่าจะเป็นโปรเจกต์เล็กหรือใหญ่ และพร้อมปรับจนกว่าจะได้ผลลัพธ์ที่ใช่จริง ๆ 🩷" data-en="We believe great work comes from deep understanding — so we care about every brief, no matter the scope, and refine until the result truly feels right. 🩷">
+          เราเชื่อว่างานดีเกิดจากความเข้าใจที่ลึกซึ้ง เพราะนั้นเราจึงใส่ใจทุก brief
+          ไม่ว่าจะเป็นโปรเจกต์เล็กหรือใหญ่ และพร้อมปรับจนกว่าจะได้ผลลัพธ์ที่ใช่จริง ๆ 🩷
+        </p>
+
+        <div class="about-strengths">
+          <div class="strength-item">
+            <span class="strength-text" data-th="ใส่ใจรายละเอียด" data-en="Detail-oriented">ใส่ใจรายละเอียด</span>
+          </div>
+          <div class="strength-item">
+            <span class="strength-text" data-th="ตรงเวลา" data-en="On-time">ตรงเวลา</span>
+          </div>
+          <div class="strength-item">
+            <span class="strength-text" data-th="สื่อสารตลอดงาน" data-en="Always in Touch">สื่อสารตลอดงาน</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-card fade-up">
+      <div class="section-label" style="margin:0 auto 16px" data-th="✉️ ติดต่อ" data-en="✉️ Get in Touch">✉️ ติดต่อ</div>
+      <h2 class="contact-title">
+        <span data-th="มาพูดคุยกัน" data-en="Let's Talk">มาพูดคุยกัน</span><span style="color:var(--pink)"> ♡</span>
+      </h2>
+      <p class="contact-sub" data-th="มีโปรเจกต์สนุก ๆ ในใจ ทักมาพูดคุยกันได้เลย!" data-en="Got a fun project in mind? Come chat with us anytime!">
+        มีโปรเจกต์สนุก ๆ ในใจ ทักมาพูดคุยกันได้เลย!
+      </p>
+
+      <div class="contact-links" id="contact-links"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 <span>SmallPaws Motion</span> — Made with 🐾 & lots of caffeine</p>
+</footer>
+
+<!-- ── Modal ───────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-video-wrap">
+      <div id="modal-video" style="width:100%;height:100%"></div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-title" id="modal-title"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/works-data.js?v=4"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>

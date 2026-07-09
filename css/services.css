@@ -1,0 +1,656 @@
+/* ============================================================
+   SmallPaws Motion — Services Page Styles
+   Brand Guideline v1.0: Pink #FF3D8B / Violet #7C5CFC
+   ============================================================ */
+
+/* ── Nav override for light page ───────────────────────────── */
+.scrolled-toggle {
+  background: var(--purple-light) !important;
+  border-color: var(--purple-mid) !important;
+  color: var(--violet) !important;
+}
+
+/* ── Icon Placeholders ──────────────────────────────────────── */
+/*
+  Slots ที่ swap ได้:
+  data-slot="hero-illustration"   → รูปใหญ่ข้าง hero (420×420)
+  data-slot="explainer-icon"      → icon บน service card
+  data-slot="typography-icon"     → icon บน service card
+  data-slot="character-icon"      → icon บน service card
+  data-slot="uxui-icon"           → icon บน service card
+  data-slot="process-illustration"→ รูปข้าง process (400×400)
+  data-slot="why-brief"           → icon why card
+  data-slot="why-ontime"          → icon why card
+  data-slot="why-revise"          → icon why card
+  data-slot="why-comm"            → icon why card
+  data-slot="cta-decoration"      → ไอคอน CTA
+
+  วิธี swap PNG:
+    ลบ div.icon-placeholder และใส่ <img src="..."> แทน
+
+  วิธี swap Lottie (requires lottie-player script):
+    ลบ div.icon-placeholder และใส่:
+    <lottie-player src="assets/lotties/xxx.json"
+      background="transparent" speed="1"
+      style="width:88px;height:88px" autoplay loop>
+    </lottie-player>
+*/
+.icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(124,92,252,0.25);
+  border-radius: var(--radius-xl);
+  background: var(--purple-light);
+  position: relative;
+}
+
+.placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+.placeholder-emoji { font-size: 48px; }
+.placeholder-hint {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--violet);
+  opacity: 0.6;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.svc-hero {
+  padding: 140px 24px 80px;
+  background: var(--bg);
+  overflow: hidden;
+  position: relative;
+}
+.svc-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(124,92,252,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.svc-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: wrap-reverse;
+}
+
+.svc-hero-visual {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svc-hero-lottie {
+  width: 380px;
+  height: 380px;
+  border-radius: 40px;
+  position: relative;
+  z-index: 1;
+}
+.svc-hero-img {
+  width: 420px;
+  max-width: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.12s ease-out;
+  filter: drop-shadow(0 16px 40px rgba(124,92,252,0.2));
+}
+.svc-hero-blob {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle at 50% 50%, rgba(124,92,252,0.15), rgba(255,61,139,0.08));
+  border-radius: 50%;
+  z-index: 0;
+  animation: blob-float 6s ease-in-out infinite;
+}
+@keyframes blob-float {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%       { transform: scale(1.04) translateY(-10px); }
+}
+
+.svc-hero-text { flex: 1; min-width: 280px; }
+
+.svc-hero-title {
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 16px 0 20px;
+}
+.hero-gradient {
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.15em;
+  display: block;
+}
+
+.svc-hero-desc {
+  color: var(--gray-600);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 420px;
+}
+
+.svc-hero-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border: 1.5px solid rgba(124,92,252,0.18);
+  border-radius: 20px;
+  padding: 14px 20px;
+  box-shadow: var(--shadow-soft);
+  min-width: 88px;
+}
+.stat-num {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--violet);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-400);
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ── Buttons (reuse base + add outline) ─────────────────────── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all var(--transition);
+  background: transparent;
+  border: 2px solid var(--purple-mid);
+  color: var(--violet);
+}
+.btn-outline:hover {
+  background: var(--purple-light);
+  border-color: var(--violet);
+}
+
+/* ── Services Grid — 3+2 centered ──────────────────────────── */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  row-gap: 60px;
+  padding-top: 36px;
+}
+
+/* row 1: 3 cards each span 2 cols */
+.svc-card:nth-child(1) { grid-column: 1 / 3; }
+.svc-card:nth-child(2) { grid-column: 3 / 5; }
+.svc-card:nth-child(3) { grid-column: 5 / 7; }
+/* row 2: 2 cards centered */
+.svc-card:nth-child(4) { grid-column: 2 / 4; }
+.svc-card:nth-child(5) { grid-column: 4 / 6; }
+
+@media (max-width: 700px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-card:nth-child(n) { grid-column: auto; }
+}
+@media (max-width: 480px) {
+  .svc-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Service card — white + shadow ── */
+.svc-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 80px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: visible;
+  border: 1.5px solid rgba(124,92,252,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(124,92,252,0.14);
+}
+
+/* Dark overlay on hover — ใส่ border-radius ให้ clip ตัวเอง */
+.svc-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  border-radius: var(--radius-xl);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+.svc-card:hover .svc-card-overlay { opacity: 0.72; }
+
+/* All content above overlay */
+.svc-card-body,
+.btn-flip-cta { position: relative; z-index: 2; }
+
+/* Icon — โผล่ออกด้านบนการ์ด */
+.svc-card-icon-wrap {
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.svc-icon-img {
+  width: 115px; height: 115px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(124,92,252,0.25));
+  transition: transform 0.35s ease;
+}
+.svc-card:hover .svc-icon-img {
+  transform: translateY(-6px) scale(1.08);
+}
+
+/* Card body */
+.svc-card-body {
+  display: flex; flex-direction: column;
+  gap: 10px; flex: 1;
+}
+
+/* Title */
+.svc-card-title {
+  font-size: 18px; font-weight: 800;
+  font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+  color: var(--gray-800); margin: 0; line-height: 1.25;
+  transition: color 0.4s;
+}
+.svc-card:hover .svc-card-title { color: white; }
+
+/* List */
+.svc-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 5px;
+}
+.svc-list li {
+  font-size: 12px; font-weight: 600;
+  color: var(--gray-600);
+  padding-left: 16px; position: relative; line-height: 1.4;
+  transition: color 0.4s;
+}
+.svc-list li::before {
+  content: '✓'; position: absolute; left: 0;
+  color: var(--pink); font-size: 11px;
+  transition: color 0.4s;
+}
+.svc-card:hover .svc-list li { color: rgba(255,255,255,0.85); }
+.svc-card:hover .svc-list li::before { color: rgba(255,255,255,0.6); }
+
+/* Duration */
+.svc-duration {
+  font-size: 11px; font-weight: 700;
+  color: var(--gray-400);
+  transition: color 0.4s;
+}
+.svc-card:hover .svc-duration { color: rgba(255,255,255,0.55); }
+
+/* CTA button — visible always, subtle on default, vivid on hover */
+.btn-flip-cta {
+  display: flex; align-items: center; justify-content: center;
+  padding: 11px 20px; border-radius: 50px;
+  background: var(--purple-light);
+  color: var(--violet); font-weight: 800; font-size: 13px;
+  text-decoration: none; flex-shrink: 0;
+  font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+}
+.svc-card:hover .btn-flip-cta {
+  background: white;
+  color: var(--pink);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+}
+.btn-flip-cta:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+/* ── Process Section ────────────────────────────────────────── */
+.svc-process-section {
+  background: var(--gray-100);
+}
+
+.svc-process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.svc-process-visual {
+  flex: 0 0 auto;
+}
+
+.process-visual-wrap {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-blob-bg {
+  position: absolute;
+  inset: 20px;
+  background: linear-gradient(135deg, var(--pink-pale), var(--purple-light));
+  border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  animation: blobMorph 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+.process-img {
+  position: relative;
+  width: 420px;
+  max-width: 115%;
+  object-fit: contain;
+  z-index: 1;
+  transition: transform 0.12s ease-out;
+  filter: drop-shadow(0 16px 32px rgba(124,92,252,0.22));
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.process-step {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(124,92,252,0.10);
+  transition: background var(--transition);
+}
+.process-step:last-child { border-bottom: none; }
+
+.step-num {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--violet);
+  opacity: 0.4;
+  flex-shrink: 0;
+  width: 48px;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+  color: var(--gray-800);
+  margin-bottom: 6px;
+}
+.step-desc {
+  font-size: 14px;
+  color: var(--gray-600);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* ── Why Grid ───────────────────────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.why-card {
+  background: white;
+  border: 1.5px solid rgba(124,92,252,0.10);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.why-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.why-icon-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(124,92,252,0.15));
+  transition: transform 0.35s ease;
+}
+.why-card:hover .why-icon-img {
+  transform: translateY(-6px) scale(1.08);
+}
+
+.why-title {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+  color: var(--gray-800);
+}
+.why-desc {
+  font-size: 14px;
+  color: var(--gray-600);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* ── FAQ ────────────────────────────────────────────────────── */
+.svc-faq-section {
+  background: var(--white);
+}
+.svc-faq-inner {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(124,92,252,0.12);
+  transition: box-shadow var(--transition);
+}
+.faq-item[open] { box-shadow: var(--shadow-soft); }
+.faq-item[open] .faq-q { color: var(--violet); }
+
+.faq-q {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--gray-800);
+  padding: 18px 20px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color var(--transition);
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--purple-mid);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+.faq-item[open] .faq-q::after {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-600);
+  line-height: 1.7;
+  padding: 0 20px 18px;
+}
+
+/* ── CTA Banner ─────────────────────────────────────────────── */
+.svc-cta-banner {
+  background: linear-gradient(135deg, var(--pink-pale), var(--purple-light));
+  padding: 40px 24px;
+  overflow: visible;
+  position: relative;
+}
+
+.svc-cta-blob { display: none; }
+
+.svc-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Icon slots ซ้าย-ขวา */
+.cta-side-icon {
+  flex: 0 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.cta-side-icon img {
+  width: 260px !important;
+  height: 260px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 32px rgba(124,92,252,0.2));
+  transform: translateY(20px);
+}
+.cta-side-icon.icon-placeholder {
+  height: 160px;
+  border-radius: 28px;
+  background: rgba(124,92,252,0.08);
+  border: 2px dashed rgba(124,92,252,0.25) !important;
+  flex-direction: column;
+  gap: 8px;
+}
+.cta-side-icon .placeholder-emoji { font-size: 36px; }
+.cta-side-icon .placeholder-hint  { font-size: 10px; }
+
+/*
+  วิธี swap icon ซ้าย/ขวา:
+  PNG:   <img src="assets/images/cta-left.png"  alt="" style="width:160px">
+  Lottie: <lottie-player src="assets/lotties/cta-left.json"
+             style="width:160px;height:160px" autoplay loop></lottie-player>
+  data-slot="cta-left"  / data-slot="cta-right"
+*/
+
+/* Text center */
+.svc-cta-text {
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+.svc-cta-title {
+  font-size: clamp(24px, 3.2vw, 44px);
+  font-weight: 900;
+  color: var(--gray-800);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  white-space: nowrap;
+}
+.svc-cta-sub {
+  font-size: 15px;
+  color: var(--gray-600);
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+.btn-cta-big {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  color: white;
+  font-weight: 900;
+  font-size: 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 8px 32px rgba(255,61,139,0.30);
+}
+.btn-cta-big:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(255,61,139,0.40);
+}
+
+@media (max-width: 768px) {
+  .cta-side-icon { display: none; }
+}
+
+/* ── Fade-up (shared with main) ─────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .svc-hero-lottie,
+  .process-placeholder { width: 100%; height: 260px; }
+  .svc-hero-blob { width: 280px; height: 280px; }
+  .svc-process-grid { gap: 32px; }
+  .svc-faq-inner { gap: 32px; }
+}
