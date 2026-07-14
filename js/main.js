@@ -200,25 +200,27 @@ function initContact() {
   if (!wrap || typeof CONTACT === 'undefined') return;
 
   const links = [
-    { key: 'email',     icon: '✉️',  label: 'Email',     href: `mailto:${CONTACT.email}` },
-    { key: 'instagram', icon: '📸',  label: 'Instagram', href: `https://instagram.com/${CONTACT.instagram.replace('@','')}` },
-    { key: 'facebook',  icon: '📘',  label: 'Facebook',  href: `https://facebook.com/${CONTACT.facebook}` },
-    { key: 'tiktok',    icon: '🎵',  label: 'TikTok',    href: `https://tiktok.com/${CONTACT.tiktok}` },
+    { key: 'email',     label: 'Email',                  account: CONTACT.email,     href: `mailto:${CONTACT.email}` },
+    { key: 'instagram', label: 'Instagram',               account: CONTACT.instagram, href: `https://instagram.com/${(CONTACT.instagram||'').replace('@','')}` },
+    { key: 'facebook',  label: 'Facebook',                account: CONTACT.facebook,  href: `https://facebook.com/${CONTACT.facebook}` },
+    { key: 'tiktok',    label: 'TikTok',                  account: CONTACT.tiktok,    href: `https://tiktok.com/${CONTACT.tiktok}` },
   ].filter(l => CONTACT[l.key]);
 
   wrap.innerHTML = links.map(l => `
     <a href="${l.href}" class="contact-link" target="_blank" rel="noopener">
-      <span class="icon">${l.icon}</span>
-      <span>${l.label}</span>
+      <span class="contact-link-label">${l.label}</span>
+      <span class="contact-link-account">${l.account}</span>
     </a>
   `).join('');
+}
 
-  // Update email link
-  const emailEl = document.querySelector('.contact-email-big');
-  if (emailEl && CONTACT.email) {
-    emailEl.href = `mailto:${CONTACT.email}`;
-    emailEl.textContent = CONTACT.email;
-  }
+/* ── Copy email ─────────────────────────────────────────────── */
+function copyEmail(btn) {
+  navigator.clipboard.writeText('smallpaws.motion@gmail.com').then(() => {
+    const copied = document.getElementById('about-email-copied');
+    copied.classList.add('show');
+    setTimeout(() => copied.classList.remove('show'), 2000);
+  });
 }
 
 /* ── Fade-up observer ───────────────────────────────────────── */

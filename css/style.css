@@ -509,22 +509,24 @@ button, .btn-primary, .btn-outline, .filter-btn,
   font-size: 17px; line-height: 1.8; color: var(--gray-600); margin-bottom: 20px;
 }
 
-/* 3 strength pills แนวนอน */
-.about-strengths { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.strength-item {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 22px; border-radius: 50px;
-  border: 2px solid var(--pink);
-  background: transparent;
-  transition: all var(--transition);
-  cursor: default;
+/* Email row in about */
+.about-email-row {
+  display: flex; align-items: center; gap: 10px; margin-top: 28px; flex-wrap: wrap;
 }
-.strength-item:hover {
-  background: var(--pink-pale);
+.about-email-icon { font-size: 20px; }
+.about-email-btn {
+  font-size: 15px; font-weight: 700; color: var(--gray-800);
+  background: none; border: none; border-bottom: 2px solid var(--pink-light);
+  padding-bottom: 2px; cursor: pointer; font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+  transition: border-color var(--transition), color var(--transition);
 }
-.strength-text {
-  font-size: 14px; font-weight: 700; color: var(--pink);
+.about-email-btn:hover { border-color: var(--pink); color: var(--pink); }
+.about-email-copied {
+  font-size: 12px; font-weight: 700; color: var(--violet);
+  background: var(--purple-light); padding: 3px 10px; border-radius: 99px;
+  opacity: 0; transition: opacity 0.3s;
 }
+.about-email-copied.show { opacity: 1; }
 
 /* ── CONTACT ──────────────────────────────────────────────── */
 #contact {
@@ -543,23 +545,26 @@ button, .btn-primary, .btn-outline, .filter-btn,
   display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 40px;
 }
 .contact-link {
-  display: flex; align-items: center; gap: 10px;
-  padding: 14px 24px; border-radius: var(--radius-xl);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 16px 28px; border-radius: var(--radius-xl);
   background: var(--gray-100); text-decoration: none;
-  color: var(--gray-700); font-weight: 700; font-size: 15px;
-  transition: all var(--transition); border: 2px solid transparent;
+  color: var(--gray-700); transition: all var(--transition); border: 2px solid transparent;
+  min-width: 140px;
 }
 .contact-link:hover {
-  background: white; border-color: var(--purple-mid); color: var(--violet);
-  transform: translateY(-2px); box-shadow: var(--shadow-soft);
+  background: white; border-color: var(--purple-mid);
+  transform: translateY(-3px); box-shadow: var(--shadow-soft);
 }
-.contact-link .icon { font-size: 20px; }
-.contact-email-big {
-  font-size: clamp(18px, 3vw, 24px); font-weight: 900; color: var(--gray-800);
-  text-decoration: none; border-bottom: 3px solid var(--pink-light); padding-bottom: 4px;
-  transition: border-color var(--transition);
+.contact-link-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gray-400); transition: color var(--transition);
 }
-.contact-email-big:hover { border-color: var(--pink); }
+.contact-link:hover .contact-link-label { color: var(--purple-mid); }
+.contact-link-account {
+  font-size: 14px; font-weight: 700; color: var(--gray-800);
+  transition: color var(--transition);
+}
+.contact-link:hover .contact-link-account { color: var(--violet); }
 
 /* ── FOOTER ───────────────────────────────────────────────── */
 footer {
