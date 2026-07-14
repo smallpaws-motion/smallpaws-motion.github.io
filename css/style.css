@@ -530,37 +530,42 @@ button, .btn-primary, .btn-outline, .filter-btn,
 
 /* ── CONTACT ──────────────────────────────────────────────── */
 #contact {
-  background: linear-gradient(135deg, var(--pink-pale), var(--purple-light));
+  background: var(--dark);
+  padding-bottom: 0;
 }
 .contact-card {
-  background: white; border-radius: var(--radius-2xl);
-  padding: 56px 64px; text-align: center;
-  box-shadow: 0 16px 64px rgba(124,92,252,0.15);
+  background: transparent;
+  padding: 56px 64px 48px; text-align: center;
+  box-shadow: none; border-radius: 0;
 }
 .contact-title {
   font-size: clamp(28px, 4vw, 42px); font-weight: 900; margin-bottom: 12px;
+  color: white;
 }
-.contact-sub { font-size: 17px; color: var(--gray-600); margin-bottom: 40px; }
+.contact-title span[style] { color: var(--pink) !important; }
+.contact-sub { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 40px; }
 .contact-links {
-  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 40px;
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 0;
 }
 .contact-link {
   display: inline-flex; align-items: center; justify-content: center;
-  text-decoration: none; transition: transform var(--transition);
+  width: 52px; height: 52px; border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  text-decoration: none; transition: all var(--transition);
 }
-.contact-link:hover { transform: translateY(-4px) scale(1.08); }
+.contact-link:hover {
+  background: var(--violet);
+  transform: translateY(-4px) scale(1.08);
+}
 .contact-sns-icon {
-  width: 56px; height: 56px; display: block;
-  transition: filter var(--transition);
-}
-.contact-link:hover .contact-sns-icon {
-  filter: brightness(0) saturate(1) invert(40%) sepia(80%) saturate(600%) hue-rotate(230deg) brightness(1.1);
+  width: 28px; height: 28px; display: block;
 }
 
 /* ── FOOTER ───────────────────────────────────────────────── */
 footer {
-  background: var(--dark); color: rgba(255,255,255,0.45);
-  padding: 32px 24px; text-align: center; font-size: 14px; font-weight: 600;
+  background: var(--dark); color: rgba(255,255,255,0.3);
+  padding: 20px 24px 32px; text-align: center; font-size: 13px; font-weight: 600;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 footer span { color: var(--pink-200); }
 
