@@ -309,6 +309,54 @@ button, .btn-primary, .btn-outline, .filter-btn,
   50%      { opacity: 1;   transform: scaleY(1.2); }
 }
 
+/* ── WORKS MODE TOGGLE ────────────────────────────────────── */
+.mode-toggle {
+  display: inline-flex;
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  border-radius: 99px;
+  padding: 5px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(124,92,252,0.25);
+}
+.mode-btn {
+  font-size: 14px; font-weight: 700;
+  padding: 10px 28px; border-radius: 99px; border: none;
+  background: transparent; color: rgba(255,255,255,0.75);
+  cursor: pointer; transition: all var(--transition);
+  font-family: 'Inter', 'Prompt', system-ui, sans-serif;
+}
+.mode-btn.active {
+  background: white;
+  color: var(--violet);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.mode-btn:not(.active):hover { color: white; }
+
+/* ── COMING SOON ──────────────────────────────────────────── */
+.coming-soon-wrap {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 80px 24px; text-align: center;
+  border: 2px dashed var(--purple-mid);
+  border-radius: var(--radius-2xl);
+  background: var(--purple-light);
+  margin-top: 32px;
+  animation: fadeInUp 0.4s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.coming-soon-emoji { font-size: 52px; margin-bottom: 20px; }
+.coming-soon-title {
+  font-size: clamp(20px, 3vw, 28px); font-weight: 900;
+  color: var(--violet); margin-bottom: 12px;
+  font-family: 'PG Boston', Georgia, 'Prompt', sans-serif;
+}
+.coming-soon-sub {
+  font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 480px;
+}
+.coming-soon-sub em { color: var(--pink); font-style: normal; font-weight: 700; }
+
 /* ── WORKS ────────────────────────────────────────────────── */
 #works { background: var(--bg); }
 

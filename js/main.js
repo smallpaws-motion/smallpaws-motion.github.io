@@ -33,9 +33,12 @@ function initLangToggle() {
   btn.addEventListener('click', () => {
     currentLang = currentLang === 'th' ? 'en' : 'th';
     applyLang();
-    // update filter bar labels too
-    renderFilters();
-    renderWorks();
+    if (worksMode === 'graphic') {
+      renderGraphicComingSoon();
+    } else {
+      renderFilters();
+      renderWorks();
+    }
   });
 }
 
@@ -65,6 +68,39 @@ function initNav() {
 }
 
 /* Hero bg — ไม่ต้องทำอะไร เป็น static media วนลูปเอง */
+
+/* ── Works Mode Toggle ──────────────────────────────────────── */
+let worksMode = 'motion';
+
+function setWorksMode(mode) {
+  worksMode = mode;
+  document.getElementById('mode-motion')?.classList.toggle('active', mode === 'motion');
+  document.getElementById('mode-graphic')?.classList.toggle('active', mode === 'graphic');
+  activeFilter = 'all';
+
+  if (mode === 'graphic') {
+    document.getElementById('filter-bar').innerHTML = '';
+    renderGraphicComingSoon();
+  } else {
+    renderFilters();
+    renderWorks();
+  }
+}
+
+function renderGraphicComingSoon() {
+  const grid = document.getElementById('works-grid');
+  const isTh = currentLang === 'th';
+  grid.innerHTML = `
+    <div class="coming-soon-wrap">
+      <div class="coming-soon-emoji">✏️</div>
+      <div class="coming-soon-title">${isTh ? 'กำลังวาด Wireframe อยู่นะ...' : 'Currently wireframing this section...'}</div>
+      <p class="coming-soon-sub">
+        ${isTh
+          ? 'ส่วนนี้ยังอยู่ใน <em>Draft Mode</em> เหมือน Low-fi ที่ยังไม่ได้ Handoff<br>เร็ว ๆ นี้จะ Ship งาน Graphic Design มาให้ดูแน่นอน 🐾'
+          : 'This section is still in <em>Draft Mode</em> — like a lo-fi prototype waiting to be handed off.<br>Graphic design work dropping here soon. 🐾'}
+      </p>
+    </div>`;
+}
 
 /* ── Works Grid ─────────────────────────────────────────────── */
 let activeFilter = 'all';

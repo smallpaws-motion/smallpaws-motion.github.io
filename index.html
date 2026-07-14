@@ -9,7 +9,7 @@
   <meta property="og:description" content="Motion graphic portfolio — 8 years of bringing stories to life through motion">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
 </head>
 <body>
@@ -93,6 +93,17 @@
       <h2 class="section-title" style="margin-bottom:32px">
         <span data-th="งานที่ผ่านมา" data-en="Our Work">งานที่ผ่านมา</span><span style="color:var(--pink)">.</span>
       </h2>
+    </div>
+
+    <div class="fade-up" id="works-mode-toggle">
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="mode-motion" onclick="setWorksMode('motion')">
+          <span data-th="Motion" data-en="Motion">Motion</span>
+        </button>
+        <button class="mode-btn" id="mode-graphic" onclick="setWorksMode('graphic')">
+          <span data-th="Graphic Design" data-en="Graphic Design">Graphic Design</span>
+        </button>
+      </div>
     </div>
 
     <div class="fade-up" id="filter-bar"></div>
@@ -196,6 +207,6 @@
 </div>
 
 <script src="js/works-data.js?v=4"></script>
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>
