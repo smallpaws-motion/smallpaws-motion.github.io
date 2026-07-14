@@ -543,7 +543,8 @@ button, .btn-primary, .btn-outline, .filter-btn,
   color: white;
 }
 .contact-title span[style] { color: var(--pink) !important; }
-.contact-sub { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 40px; }
+.contact-sub { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
+.contact-more { font-size: 14px; color: rgba(255,255,255,0.35); margin-bottom: 36px; letter-spacing: 0.01em; }
 .contact-links {
   display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 0;
 }

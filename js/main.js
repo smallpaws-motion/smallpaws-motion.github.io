@@ -25,7 +25,7 @@ const SLIDE_PLACEHOLDERS = [
 ];
 
 /* ── Language ───────────────────────────────────────────────── */
-let currentLang = 'th';
+let currentLang = 'en';
 
 function initLangToggle() {
   const btn = document.getElementById('lang-toggle');
