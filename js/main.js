@@ -200,16 +200,14 @@ function initContact() {
   if (!wrap || typeof CONTACT === 'undefined') return;
 
   const links = [
-    { key: 'email',     label: 'Email',                  account: CONTACT.email,     href: `mailto:${CONTACT.email}` },
-    { key: 'instagram', label: 'Instagram',               account: CONTACT.instagram, href: `https://instagram.com/${(CONTACT.instagram||'').replace('@','')}` },
-    { key: 'facebook',  label: 'Facebook',                account: CONTACT.facebook,  href: `https://facebook.com/${CONTACT.facebook}` },
-    { key: 'tiktok',    label: 'TikTok',                  account: CONTACT.tiktok,    href: `https://tiktok.com/${CONTACT.tiktok}` },
+    { key: 'instagram', icon: 'assets/svg/IG_icon.svg',     label: 'Instagram', href: `https://instagram.com/${(CONTACT.instagram||'').replace('@','')}` },
+    { key: 'facebook',  icon: 'assets/svg/FB_icon.svg',     label: 'Facebook',  href: `https://facebook.com/${CONTACT.facebook}` },
+    { key: 'tiktok',    icon: 'assets/svg/Tiktok_icon.svg', label: 'TikTok',    href: `https://tiktok.com/${CONTACT.tiktok}` },
   ].filter(l => CONTACT[l.key]);
 
   wrap.innerHTML = links.map(l => `
-    <a href="${l.href}" class="contact-link" target="_blank" rel="noopener">
-      <span class="contact-link-label">${l.label}</span>
-      <span class="contact-link-account">${l.account}</span>
+    <a href="${l.href}" class="contact-link" target="_blank" rel="noopener" aria-label="${l.label}">
+      <img src="${l.icon}" alt="${l.label}" class="contact-sns-icon">
     </a>
   `).join('');
 }
