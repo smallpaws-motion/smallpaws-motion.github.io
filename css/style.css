@@ -612,26 +612,27 @@ button, .btn-primary, .btn-outline, .filter-btn,
 
 /* ── GRAPHIC MODAL ────────────────────────────────────────── */
 .modal-box.graphic-modal-box {
-  max-width: 1100px; display: flex; flex-direction: row;
-  height: 80vh; max-height: 700px;
+  max-width: 760px; width: 92vw;
+  display: flex; flex-direction: column;
+  max-height: 90vh; overflow-y: auto;
+  height: auto;
 }
 .modal-box.graphic-modal-box .modal-video-wrap {
-  flex: 1; aspect-ratio: unset; height: 100%;
+  flex: none; aspect-ratio: unset; height: auto; width: 100%;
 }
 .modal-box.graphic-modal-box .modal-footer {
-  width: 260px; flex-shrink: 0; flex-direction: column;
-  align-items: flex-start; justify-content: space-between;
-  padding: 28px 24px; border-left: 1px solid var(--border);
-}
-.graphic-modal-inner {
-  display: flex; width: 100%; height: 100%;
+  width: 100%; flex-shrink: 0; flex-direction: column;
+  align-items: flex-start; justify-content: flex-start;
+  padding: 24px 28px 28px; border-left: none; border-top: 1px solid var(--border);
+  position: relative;
 }
 .graphic-img-wrap {
-  position: relative; flex: 1; background: #f3f3f7;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  position: relative; width: 100%; background: #f3f3f7;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 300px;
 }
 .graphic-modal-img {
-  max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+  width: 100%; height: auto; max-height: 70vh; object-fit: contain; display: block;
 }
 .graphic-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
@@ -653,9 +654,9 @@ button, .btn-primary, .btn-outline, .filter-btn,
 }
 .graphic-dot.active { background: var(--violet); }
 .graphic-modal-info {
-  display: flex; flex-direction: column; gap: 16px; flex: 1;
+  display: flex; flex-direction: column; gap: 14px;
 }
-.gm-row { display: flex; flex-direction: column; gap: 3px; font-size: 14px; line-height: 1.6; }
+.gm-row { display: flex; flex-direction: column; gap: 3px; font-size: 14px; line-height: 1.7; font-weight: 400; color: var(--gray-600); }
 .gm-label {
   font-weight: 800; color: var(--violet);
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
