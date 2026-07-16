@@ -156,6 +156,16 @@ const GRAPHIC_WORKS = [
     concept: "A cohesive social media visual identity for Luka's beauty brand — playful retro-Y2K style with grid textures, bold funky typography, pastel-lavender palette, and cloud/heart motifs. Designed to tease a new product launch (Grape Glow Bar) while keeping the brand's cute, approachable character consistent across formats.",
     client: "Luka",
     year: 2025,
+  },  {
+    id: "g6",
+    title: "Purrperry Cattery — Facebook Cover & Profile",
+    category: ["social media", "graphic design", "illustration"],
+    thumbnail: "assets/graphic/Purrperry_facebookcover.png",
+    images: ["assets/graphic/Purrperry_facebookcover.png"],
+    what: "Facebook Cover & Profile Photo Design",
+    concept: "Social media branding for Purrperry Cattery — a British Shorthair cattery specializing in chocolate-line cats. The cover art takes place inside a whimsical chocolate factory, where plump chocolate-toned British Shorthairs work among cocoa vats, conveyor belts of truffle-filled crates, and swirling steam. Warm amber and deep brown palette with gold accents, giving the brand a cozy, premium-artisan confectionery feel.",
+    client: "Purrperry Cattery",
+    year: 2025,
   },];
 
 const TESTIMONIALS = [
