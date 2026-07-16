@@ -113,7 +113,17 @@ const GRAPHIC_WORKS = [
     client: "Personal Project",
     year: 2023,
   },
-];
+  {
+    id: "g2",
+    title: "Fintech App Ecosystem",
+    category: ["illustration", "animation"],
+    thumbnail: "assets/graphic/isoPhone.png",
+    images: ["assets/graphic/isoPhone.png"],
+    what: "Isometric Illustration & Loop Animation",
+    concept: "An isometric exploded-view of a mobile trading/fintech app ecosystem — showing the invisible infrastructure behind a phone screen: blockchain nodes, marketplace, security layer, buy/sell mechanics. Designed to loop as a web hero illustration, making complex tech feel approachable and visually satisfying.",
+    client: "Personal Project",
+    year: 2024,
+  },];
 
 const TESTIMONIALS = [
   {
