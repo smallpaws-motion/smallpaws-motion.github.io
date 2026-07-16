@@ -143,6 +143,19 @@ const GRAPHIC_WORKS = [
     concept: "A brand mascot for Luka — designed after the client's real son. A mischievous, expressive boy with signature big round eyes, sweet gaze, and a front hair tuft. The asset sheet includes multiple poses, facial expressions, and hand/leg parts, built for animation-ready rigging.",
     client: "Luka",
     year: 2025,
+  },  {
+    id: "g5",
+    title: "Luka Social Media Design",
+    category: ["social media", "graphic design"],
+    thumbnail: "assets/graphic/Luka_socialPost1.webp",
+    images: [
+      "assets/graphic/Luka_Facebookpagecover.webp",
+      "assets/graphic/Luka_socialPost1.webp",
+    ],
+    what: "Social Media Design — Facebook Cover & Post Graphics",
+    concept: "A cohesive social media visual identity for Luka's beauty brand — playful retro-Y2K style with grid textures, bold funky typography, pastel-lavender palette, and cloud/heart motifs. Designed to tease a new product launch (Grape Glow Bar) while keeping the brand's cute, approachable character consistent across formats.",
+    client: "Luka",
+    year: 2025,
   },];
 
 const TESTIMONIALS = [
