@@ -133,6 +133,16 @@ const GRAPHIC_WORKS = [
     concept: "A tarot-card style New Year greeting for 2026 — Year of the Horse. Illustrated in a flat, editorial style with bold colors (blue, pink, gold) and vintage card typography. The horse character is cheerful and stylized, framed by an arch and sunburst rays reminiscent of classic tarot card composition.",
     client: "Personal Project",
     year: 2025,
+  },  {
+    id: "g4",
+    title: "Luka Character Design",
+    category: ["character design", "illustration"],
+    thumbnail: "assets/graphic/Luka_Character.png",
+    images: ["assets/graphic/Luka_Character.png"],
+    what: "Character Design & Asset Sheet",
+    concept: "A brand mascot for Luka — designed after the client's real son. A mischievous, expressive boy with signature big round eyes, sweet gaze, and a front hair tuft. The asset sheet includes multiple poses, facial expressions, and hand/leg parts, built for animation-ready rigging.",
+    client: "Luka",
+    year: 2025,
   },];
 
 const TESTIMONIALS = [
