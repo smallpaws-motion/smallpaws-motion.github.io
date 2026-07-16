@@ -123,6 +123,16 @@ const GRAPHIC_WORKS = [
     concept: "An isometric exploded-view of a mobile trading/fintech app ecosystem — showing the invisible infrastructure behind a phone screen: blockchain nodes, marketplace, security layer, buy/sell mechanics. Designed to loop as a web hero illustration, making complex tech feel approachable and visually satisfying.",
     client: "Personal Project",
     year: 2024,
+  },  {
+    id: "g3",
+    title: "Happy New Year 2026",
+    category: ["illustration", "editorial"],
+    thumbnail: "assets/graphic/2026greetingCard.png",
+    images: ["assets/graphic/2026greetingCard.png"],
+    what: "New Year Greeting Card Design",
+    concept: "A tarot-card style New Year greeting for 2026 — Year of the Horse. Illustrated in a flat, editorial style with bold colors (blue, pink, gold) and vintage card typography. The horse character is cheerful and stylized, framed by an arch and sunburst rays reminiscent of classic tarot card composition.",
+    client: "Personal Project",
+    year: 2025,
   },];
 
 const TESTIMONIALS = [
