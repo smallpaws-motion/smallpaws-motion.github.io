@@ -144,21 +144,25 @@ function renderGraphicModalContent() {
   const total = images.length;
   const isTh = currentLang === 'th';
 
-  document.getElementById('modal-title').textContent = w.title;
+  // Switch modal box to graphic layout
+  const modalBox = document.querySelector('.modal-box');
+  modalBox.classList.add('graphic-modal-box');
+
   document.getElementById('modal-video').innerHTML = `
-    <div class="graphic-modal-inner">
-      <div class="graphic-img-wrap">
-        ${total > 1 ? `<button class="graphic-arrow left" onclick="graphicNav(-1)">&#8249;</button>` : ''}
-        <img src="${images[graphicModalIdx]}" alt="${w.title}" class="graphic-modal-img">
-        ${total > 1 ? `<button class="graphic-arrow right" onclick="graphicNav(1)">&#8250;</button>` : ''}
-        ${total > 1 ? `<div class="graphic-dots">${images.map((_,i)=>`<span class="graphic-dot${i===graphicModalIdx?' active':''}" onclick="graphicGoTo(${i})"></span>`).join('')}</div>` : ''}
-      </div>
-      <div class="graphic-modal-info">
-        ${w.what    ? `<div class="gm-row"><span class="gm-label">${isTh?'งาน':'What'}</span><span>${w.what}</span></div>` : ''}
-        ${w.concept ? `<div class="gm-row"><span class="gm-label">Concept</span><span>${w.concept}</span></div>` : ''}
-        ${w.client  ? `<div class="gm-row"><span class="gm-label">${isTh?'ลูกค้า':'Client'}</span><span>${w.client}</span></div>` : ''}
-        ${w.year    ? `<div class="gm-row"><span class="gm-label">${isTh?'ปี':'Year'}</span><span>${w.year}</span></div>` : ''}
-      </div>
+    <div class="graphic-img-wrap">
+      ${total > 1 ? `<button class="graphic-arrow left" onclick="graphicNav(-1)">&#8249;</button>` : ''}
+      <img src="${images[graphicModalIdx]}" alt="${w.title}" class="graphic-modal-img">
+      ${total > 1 ? `<button class="graphic-arrow right" onclick="graphicNav(1)">&#8250;</button>` : ''}
+      ${total > 1 ? `<div class="graphic-dots">${images.map((_,i)=>`<span class="graphic-dot${i===graphicModalIdx?' active':''}" onclick="graphicGoTo(${i})"></span>`).join('')}</div>` : ''}
+    </div>`;
+
+  document.getElementById('modal-title').innerHTML = `
+    <div class="graphic-modal-info">
+      <div class="gm-title">${w.title}</div>
+      ${w.what    ? `<div class="gm-row"><span class="gm-label">${isTh?'งาน':'What'}</span><span>${w.what}</span></div>` : ''}
+      ${w.concept ? `<div class="gm-row"><span class="gm-label">Concept</span><span>${w.concept}</span></div>` : ''}
+      ${w.client  ? `<div class="gm-row"><span class="gm-label">${isTh?'ลูกค้า':'Client'}</span><span>${w.client}</span></div>` : ''}
+      ${w.year    ? `<div class="gm-row"><span class="gm-label">${isTh?'ปี':'Year'}</span><span>${w.year}</span></div>` : ''}
     </div>`;
 }
 
@@ -280,6 +284,8 @@ function openModal(id) {
 
 function closeModal() {
   document.getElementById('modal-video').innerHTML = '';
+  document.getElementById('modal-title').innerHTML = '';
+  document.querySelector('.modal-box')?.classList.remove('graphic-modal-box');
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
