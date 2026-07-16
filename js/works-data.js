@@ -191,3 +191,23 @@ const CONTACT = {
   facebook: "smallpaws.motion",
   tiktok: "@smallpaws.motion",
 };
+
+
+/**
+ * ============================================================
+ *  Graphic Design Works
+ * ============================================================
+ */
+const GRAPHIC_WORKS = [
+  {
+    id: "g1",
+    title: "Tom Yum Kung Noodles",
+    category: ["illustration", "animation"],
+    thumbnail: "assets/graphic/noodle-ezgif.com-optimize.gif",
+    images: ["assets/graphic/noodle-ezgif.com-optimize.gif"],
+    what: "Illustration & Short Animation",
+    concept: "Tom Yum Kung Noodles served in a retro microwave — blending Thai flavor with Japanese street-food aesthetics. Bold graphic style mixing flat illustration, Y2K/risograph textures, and anime-inspired typography.",
+    client: "Personal Project",
+    year: 2023,
+  },
+];

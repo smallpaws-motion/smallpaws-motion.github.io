@@ -87,19 +87,90 @@ function setWorksMode(mode) {
   }
 }
 
-function renderGraphicComingSoon() {
+function renderGraphicWorks() {
   const grid = document.getElementById('works-grid');
+  const works = typeof GRAPHIC_WORKS !== 'undefined' ? GRAPHIC_WORKS : [];
+
+  if (works.length === 0) {
+    const isTh = currentLang === 'th';
+    grid.innerHTML = `
+      <div class="coming-soon-wrap">
+        <div class="coming-soon-emoji">✏️</div>
+        <div class="coming-soon-title">${isTh ? 'กำลังวาด Wireframe อยู่นะ...' : 'Currently wireframing this section...'}</div>
+        <p class="coming-soon-sub">
+          ${isTh
+            ? 'ส่วนนี้ยังอยู่ใน <em>Draft Mode</em> เหมือน Low-fi ที่ยังไม่ได้ Handoff<br>เร็ว ๆ นี้จะ Ship งาน Graphic Design มาให้ดูแน่นอน 🐾'
+            : 'This section is still in <em>Draft Mode</em> — like a lo-fi prototype waiting to be handed off.<br>Graphic design work dropping here soon. 🐾'}
+        </p>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = works.map(w => `
+    <div class="work-card graphic-card fade-up" onclick="openGraphicModal('${w.id}')">
+      <div style="position:relative">
+        <img class="work-thumb" src="${w.thumbnail}" alt="${w.title}" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-tags">${(w.category||[]).map(c=>`<span class="work-tag">${c}</span>`).join('')}</div>
+        <div class="work-title">${w.title}</div>
+        ${w.what ? `<div class="work-desc">${w.what}</div>` : ''}
+      </div>
+    </div>`).join('');
+
+  observeFadeUp();
+}
+
+function renderGraphicComingSoon() {
+  renderGraphicWorks();
+}
+
+/* ── Graphic Modal ──────────────────────────────────────────── */
+let graphicModalIdx = 0;
+let graphicModalWork = null;
+
+function openGraphicModal(id) {
+  graphicModalWork = (GRAPHIC_WORKS||[]).find(w => w.id === id);
+  if (!graphicModalWork) return;
+  graphicModalIdx = 0;
+  renderGraphicModalContent();
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function renderGraphicModalContent() {
+  const w = graphicModalWork;
+  const images = w.images || [w.thumbnail];
+  const total = images.length;
   const isTh = currentLang === 'th';
-  grid.innerHTML = `
-    <div class="coming-soon-wrap">
-      <div class="coming-soon-emoji">✏️</div>
-      <div class="coming-soon-title">${isTh ? 'กำลังวาด Wireframe อยู่นะ...' : 'Currently wireframing this section...'}</div>
-      <p class="coming-soon-sub">
-        ${isTh
-          ? 'ส่วนนี้ยังอยู่ใน <em>Draft Mode</em> เหมือน Low-fi ที่ยังไม่ได้ Handoff<br>เร็ว ๆ นี้จะ Ship งาน Graphic Design มาให้ดูแน่นอน 🐾'
-          : 'This section is still in <em>Draft Mode</em> — like a lo-fi prototype waiting to be handed off.<br>Graphic design work dropping here soon. 🐾'}
-      </p>
+
+  document.getElementById('modal-title').textContent = w.title;
+  document.getElementById('modal-video').innerHTML = `
+    <div class="graphic-modal-inner">
+      <div class="graphic-img-wrap">
+        ${total > 1 ? `<button class="graphic-arrow left" onclick="graphicNav(-1)">&#8249;</button>` : ''}
+        <img src="${images[graphicModalIdx]}" alt="${w.title}" class="graphic-modal-img">
+        ${total > 1 ? `<button class="graphic-arrow right" onclick="graphicNav(1)">&#8250;</button>` : ''}
+        ${total > 1 ? `<div class="graphic-dots">${images.map((_,i)=>`<span class="graphic-dot${i===graphicModalIdx?' active':''}" onclick="graphicGoTo(${i})"></span>`).join('')}</div>` : ''}
+      </div>
+      <div class="graphic-modal-info">
+        ${w.what    ? `<div class="gm-row"><span class="gm-label">${isTh?'งาน':'What'}</span><span>${w.what}</span></div>` : ''}
+        ${w.concept ? `<div class="gm-row"><span class="gm-label">Concept</span><span>${w.concept}</span></div>` : ''}
+        ${w.client  ? `<div class="gm-row"><span class="gm-label">${isTh?'ลูกค้า':'Client'}</span><span>${w.client}</span></div>` : ''}
+        ${w.year    ? `<div class="gm-row"><span class="gm-label">${isTh?'ปี':'Year'}</span><span>${w.year}</span></div>` : ''}
+      </div>
     </div>`;
+}
+
+function graphicNav(dir) {
+  const images = graphicModalWork.images || [graphicModalWork.thumbnail];
+  graphicModalIdx = (graphicModalIdx + dir + images.length) % images.length;
+  renderGraphicModalContent();
+}
+
+function graphicGoTo(i) {
+  graphicModalIdx = i;
+  renderGraphicModalContent();
 }
 
 /* ── Works Grid ─────────────────────────────────────────────── */
