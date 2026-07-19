@@ -380,28 +380,28 @@ button, .btn-primary, .btn-outline, .filter-btn,
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  margin-left: calc(-1 * (100vw - 100%) / 2);
-  width: 100vw;
+  gap: 16px;
 }
 .work-card {
-  overflow: hidden; background: #111;
+  overflow: hidden; background: transparent;
   cursor: pointer; transition: opacity var(--transition);
   position: relative;
 }
-.work-card:hover { opacity: 0.88; }
+.work-card:hover { opacity: 0.85; }
 .work-thumb {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
+  border-radius: var(--radius-lg);
 }
 .work-thumb-placeholder {
-  width: 100%; aspect-ratio: 4/3;
+  width: 100%; aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center; font-size: 36px;
-  background: var(--purple-light);
+  background: var(--purple-light); border-radius: var(--radius-lg);
 }
 .work-play-overlay {
-  position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 4/3;
+  position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center;
   background: rgba(0,0,0,0); transition: background var(--transition);
+  border-radius: var(--radius-lg);
 }
 .work-card:hover .work-play-overlay { background: rgba(0,0,0,0.22); }
 .play-btn {
@@ -412,12 +412,12 @@ button, .btn-primary, .btn-outline, .filter-btn,
 }
 .play-btn svg { fill: var(--violet); margin-left: 3px; }
 .work-card:hover .play-btn { opacity: 1; transform: scale(1); }
-.work-info { padding: 14px 4px 20px; }
+.work-info { padding: 12px 2px 4px; background: transparent; }
 .work-tags { display: none; }
 .work-tag { display: none; }
 .work-title { font-size: 14px; font-weight: 700; color: var(--gray-800); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.03em; }
 .work-desc { font-size: 13px; color: var(--gray-400); font-weight: 400; }
-.graphic-card .work-thumb { aspect-ratio: 4/3; object-fit: cover; }
+.graphic-card .work-thumb { aspect-ratio: 16/9; }
 
 /* ── MODAL ────────────────────────────────────────────────── */
 .modal-overlay {
