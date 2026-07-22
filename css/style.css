@@ -359,6 +359,7 @@ button, .btn-primary, .btn-outline, .filter-btn,
 
 /* ── WORKS ────────────────────────────────────────────────── */
 #works { background: var(--bg); }
+#works .container { max-width: 1400px; padding: 0 32px; }
 
 .filter-bar {
   display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;
@@ -380,7 +381,7 @@ button, .btn-primary, .btn-outline, .filter-btn,
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
 .work-card {
   overflow: hidden; background: transparent;
@@ -390,18 +391,18 @@ button, .btn-primary, .btn-outline, .filter-btn,
 .work-card:hover { opacity: 0.85; }
 .work-thumb {
   width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
 }
 .work-thumb-placeholder {
   width: 100%; aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center; font-size: 36px;
-  background: var(--purple-light); border-radius: var(--radius-lg);
+  background: var(--purple-light); border-radius: 12px;
 }
 .work-play-overlay {
   position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center;
   background: rgba(0,0,0,0); transition: background var(--transition);
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
 }
 .work-card:hover .work-play-overlay { background: rgba(0,0,0,0.22); }
 .play-btn {
@@ -412,7 +413,7 @@ button, .btn-primary, .btn-outline, .filter-btn,
 }
 .play-btn svg { fill: var(--violet); margin-left: 3px; }
 .work-card:hover .play-btn { opacity: 1; transform: scale(1); }
-.work-info { padding: 12px 2px 4px; background: transparent; }
+.work-info { display: none; }
 .work-tags { display: none; }
 .work-tag { display: none; }
 .work-title { font-size: 14px; font-weight: 700; color: var(--gray-800); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.03em; }
@@ -685,4 +686,6 @@ footer span { color: var(--pink-200); }
   .contact-card { padding: 40px 24px; }
   .exp-number { font-size: 56px; }
   .hero-title { font-size: clamp(30px, 8vw, 52px); }
+  .works-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  #works .container { padding: 0 16px; }
 }
