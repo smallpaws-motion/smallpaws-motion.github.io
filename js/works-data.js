@@ -166,6 +166,16 @@ const GRAPHIC_WORKS = [
     concept: "Social media branding for Purrperry Cattery — a British Shorthair cattery specializing in chocolate-line cats. The cover art takes place inside a whimsical chocolate factory, where plump chocolate-toned British Shorthairs work among cocoa vats, conveyor belts of truffle-filled crates, and swirling steam. Warm amber and deep brown palette with gold accents, giving the brand a cozy, premium-artisan confectionery feel.",
     client: "Purrperry Cattery",
     year: 2025,
+  },  {
+    id: "g7",
+    title: "Christmas Card Set",
+    category: ["illustration", "editorial"],
+    thumbnail: "assets/graphic/xmas_greeting_card.png",
+    images: ["assets/graphic/xmas_greeting_card.png"],
+    what: "Holiday Greeting Card Set — 3-Piece Illustration Series",
+    concept: "A cozy holiday card collection built around a warm vintage Christmas palette — deep burgundy, dusty rose, and cream with gold accents. The trio works as a visual system — flat illustration style, consistent rounded-corner card format, and a shared 6-color palette — designed to feel like a small curated gift set rather than three separate pieces.",
+    client: "Personal Project",
+    year: 2024,
   },];
 
 const TESTIMONIALS = [
